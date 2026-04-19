@@ -191,7 +191,11 @@ elif step == steps[1]:
     if file:
         df = pd.read_csv(file)
     else:
+<<<<<<< HEAD
         df = pd.read_csv("global_placement.csv")
+=======
+        df = pd.read_csv("Location_Wise_Student_Data (1).csv")
+>>>>>>> dd38773685e29385f5c71b9a8a576792252cfe50
 
     st.session_state.data = df
 
@@ -226,11 +230,29 @@ elif step == steps[2]:
     else:
         st.warning("Not enough numeric columns for correlation heatmap")
 
+<<<<<<< HEAD
     
 
     col1, col2 = st.columns(2)
 
     
+=======
+    st.subheader("📊 Distribution Analysis")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.subheader("🏙️ City Distribution")
+        st.bar_chart(df['CityName'].value_counts())
+
+    with col2:
+        st.subheader("🌍 State Distribution")
+        st.bar_chart(df['StateName'].value_counts())
+
+    st.subheader("📮 Top 10 Pincode Distribution")
+    st.bar_chart(df['PermanentPincode'].value_counts().head(10))
+
+>>>>>>> dd38773685e29385f5c71b9a8a576792252cfe50
 # =========================
 # STEP 4 CLEANING
 # =========================
